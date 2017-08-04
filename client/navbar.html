@@ -1,0 +1,30 @@
+<template name="mainNav">
+     <nav class="navbar navbar-inverse " role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="/">CRUD Operations</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                {{#if currentUser}}
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/listUsers">Users</a>
+                    </li>
+                    <li>
+                    	<a href="/addUser" >Add User</a>
+                    </li>
+                </ul>
+                {{/if}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-brand align-right">{{#if currentUser}} {{> dashboard}} {{/if}}</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+       {{> yield }}
+    </div>
+</template>

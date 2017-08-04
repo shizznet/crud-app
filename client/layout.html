@@ -1,0 +1,139 @@
+<template name="loginPage">
+	
+		{{#if currentUser}}
+			<div class="jumbotron">
+				<h2 class="center">Welcome to CRUD Operations</h2>
+			</div>
+		{{else}}
+			<h2 class="center">Register / Login</h2>
+			{{> loginUser}}
+		{{/if}}
+</template>
+
+<template name="loginUser">
+	<div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+					<div class="panel-title">Login</div>
+			</div>  
+			<div class="panel-body" >
+				<form  class="form-horizontal login-user" method="post" >
+					<input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+					 <div id="div_id_email" class="form-group required">
+								<label for="id_email" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
+								<div class="controls col-md-8 ">
+										<input class="input-md emailinput form-control" id="id_email" name="loginEmail" placeholder="Your current email address" style="margin-bottom: 10px" type="email" />
+								</div>     
+						</div>
+						<div id="div_id_password1" class="form-group required">
+								<label for="id_password1" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
+								<div class="controls col-md-8 "> 
+										<input class="input-md textinput textInput form-control" id="id_password1" name="loginPassword" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
+								</div>
+						</div>
+						<div class="form-group"> 
+								<div class="aab controls col-md-4 "></div>
+								<div class="controls col-md-8 ">
+										<input type="submit" name="Login" value="Login" class="btn btn-primary btn btn-info" id="submit-add-user" />
+								</div>
+						</div>									
+					</form>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="dashboard">
+    <p>Welcome {{userName}}</p>
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
+ 
+<template name="listUsers">
+	<div class="jumbotron">
+		<h2>List of Users</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Username</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each userList}}
+					{{> tableItems}}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+
+<template name="tableItems">
+	<tr>
+		<td>{{_id}}</td>
+		<td>{{userName}}</td>
+		<td>{{firstName}}</td>
+		<td>{{lastName}}</td>
+		<td>{{emailID}}</td>
+		<td>
+			<button class="btn btn-xs btn-primary edit-user"><span class="glyphicon glyphicon-pencil"></span></button>
+			<button type="button" alt="Delete" class="btn btn-xs btn-danger delete-user"><span class="glyphicon glyphicon-remove"></span></button>
+		</td>
+	</tr>
+</template>
+
+<template name="addUser">
+	<div class="alert alert-success hidden fade in alert-dismissable" style="margin-top:18px;">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+		User added successfully.
+	</div>
+	<div class="alert alert-danger hidden fade in alert-dismissable">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+		Something went wrong. Please try again!.
+	</div>
+	<div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+					<div class="panel-title">Add User</div>
+			</div>  
+			<div class="panel-body" >
+				<form  class="form-horizontal" method="post" >
+					<input type='hidden' name='uid' value='{{_id}}' />
+					 <div id="div_id_username" class="form-group required">
+								<label for="id_username" class="control-label col-md-4  requiredField"> Username<span class="asteriskField">*</span> </label>
+								<div class="controls col-md-8 ">
+										<input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" value="{{userName}}" name="userName" placeholder="Choose your username" style="margin-bottom: 10px" type="text" />
+								</div>
+						</div>
+						<div id="div_id_email" class="form-group required">
+								<label for="id_email" class="control-label col-md-4  requiredField"> First Name<span class="asteriskField">*</span> </label>
+								<div class="controls col-md-8 ">
+										<input class="input-md emailinput form-control" id="id_email" name="firstName" value="{{firstName}}" placeholder="Your First Name" style="margin-bottom: 10px" type="text" />
+								</div>     
+						</div>
+						<div id="div_id_password1" class="form-group required">
+								<label for="id_password1" class="control-label col-md-4  requiredField">Last Name<span class="asteriskField">*</span> </label>
+								<div class="controls col-md-8 "> 
+										<input class="input-md textinput textInput form-control" id="id_password1" name="lastName" value="{{lastName}}" placeholder="Your Last Name" style="margin-bottom: 10px" type="text" />
+								</div>
+						</div>
+						<div id="div_id_password2" class="form-group required">
+								 <label for="id_password2" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
+								 <div class="controls col-md-8 ">
+										<input class="input-md textinput textInput form-control" id="id_password2" name="emailID" value="{{emailID}}" placeholder="Your Email address" style="margin-bottom: 10px" type="email" />
+								</div>
+						</div>
+						<div class="form-group"> 
+								<div class="aab controls col-md-4 "></div>
+								<div class="controls col-md-8 ">
+										<input type="submit" name="addUser" value="{{#if _id}}Update{{else}}Add{{/if}} User" class="btn btn-primary btn btn-info" id="submit-add-user" />
+								</div>
+						</div>									
+					</form>
+			</div>
+		</div>
+	</div> 
+</template>
