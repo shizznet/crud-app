@@ -1,0 +1,170 @@
+/*
+Theme Name: Digi
+Author: Harikrishnan VH
+Description: UI Kit Theme for DHFL General Insurance Limited
+Version: 1.0.0
+Tags: DHFL General Insurance, Digi
+*/
+
+.uk-divider-small:after {
+  border-top: 3px solid #2196f3;
+}
+
+.uk-button{
+  border-radius: 40px;
+}
+
+.uk-button-fix{
+  border-radius: 4px;
+}
+
+.uk-button-square{
+  border-radius: 0px;
+}
+
+.white-text{
+  color: #FFFFFF;
+}
+
+.dark-text{
+  color: #666666;
+}
+
+.muted-text{
+  color:#888888;
+}
+
+.grey-text{
+  color:#F5F5F5;
+}
+
+.menu-text{
+  font-size: 17px;
+}
+
+.para-text{
+  font-size: 21px;
+  line-height: 32px;
+  text-align: left;
+  color: #333;
+}
+
+.para-text-white{
+  font-size: 21px;
+  line-height: 32px;
+  text-align: left;
+  color: #FFF;
+}
+
+.success-background{
+  background-color:#32d296;
+}
+
+.custom-button{
+  background-color:#FFFFFF;
+  border: solid 1px #EEEEEE;
+  color: #555555;
+}
+
+.custom-button:hover{
+  border: solid 1px #2196f3;
+  color: #FFF;
+}
+
+.select-button{
+  background-color:#FFFFFF;
+  border: solid 1px #CCCCCC;
+  color: #777777;
+}
+
+.select-button:hover{
+  background-color:#2196f3;
+  border: solid 1px #2196f3;
+  color: #FFF;
+}
+
+
+.select-button-click{
+  background-color:#2196f3;
+  border: solid 1px #2196f3;
+  color: #FFF;
+}
+
+/* Loader */
+
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 0px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #2196f3;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  }
+}
+
+#ple-loader-wraps4 #ple-animates {
+   margin-left: -20px;
+   margin-top: -20px;
+}
+
+/*Navbar*/
+
+.uk-custom-navbar{
+  height: 100px;
+}
+
+.uk-nav-holder-new{
+  padding-top:10px;
+}
